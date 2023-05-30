@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <Label layoutX="86.0" layoutY="42.0" text="Appointments">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="appmntTableView" layoutX="86.0" layoutY="82.0" prefHeight="135.0" prefWidth="884.0">
+        <columns>
+          <TableColumn fx:id="appointmentID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="appointmentTitle" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="appointmentType" prefWidth="99.0" text="Type" />
+            <TableColumn fx:id="appointmentDescription" prefWidth="86.0" text="Description" />
+            <TableColumn fx:id="appointmentLocation" prefWidth="86.0" text="Location " />
+            <TableColumn fx:id="startTime" prefWidth="118.0" text="Start Date/Time" />
+            <TableColumn fx:id="endTime" prefWidth="98.0" text="End Date/Time" />
+            <TableColumn fx:id="contactId" prefWidth="70.0" text="Contact" />
+            <TableColumn fx:id="customerId" prefWidth="95.0" text="Customer ID" />
+            <TableColumn fx:id="userId" prefWidth="81.0" text="User ID" />
+        </columns>
+      </TableView>
+      <TableView fx:id="customersTableView" layoutX="86.0" layoutY="286.0" prefHeight="135.0" prefWidth="641.0">
+         <columns>
+            <TableColumn fx:id="customerID" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="custNameColumn" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="custAddressColumn" prefWidth="171.0" text="Address" />
+             <TableColumn fx:id="custCountryColumn" prefWidth="85.0" text="Postal Code" />
+            <TableColumn fx:id="custphoneNumberColumn" prefWidth="129.0" text="Phone Number" />
+            <TableColumn fx:id="custState" prefWidth="105.0" text="State/Province" />
+            <TableColumn fx:id="Division_ID" prefWidth="85.0" text="Division Name" />
+         </columns>
+      </TableView>
+      <Label layoutX="86.0" layoutY="254.0" text="Customers">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="86.0" layoutY="229.0" mnemonicParsing="false" onAction="#toAddAppointment" text="Add" />
+      <Button layoutX="210.0" layoutY="229.0" mnemonicParsing="false" onAction="#updateAppt" text="Update" />
+      <Button layoutX="294.0" layoutY="229.0" mnemonicParsing="false" onAction="#deleteRecord" text="Delete" />
+      <Button layoutX="86.0" layoutY="437.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="210.0" layoutY="437.0" mnemonicParsing="false" text="Update" />
+      <Button layoutX="294.0" layoutY="437.0" mnemonicParsing="false" text="Delete" />
+      <RadioButton fx:id="weeklyRadioButton" layoutX="600.0" layoutY="51.0" mnemonicParsing="false" onAction="#appointmentWeekSelected" text="Current Week">
+       <toggleGroup>
+           <ToggleGroup fx:id="appointment" />
+       </toggleGroup></RadioButton>
+      <RadioButton fx:id="monthlyRadioButton" layoutX="727.0" layoutY="51.0" mnemonicParsing="false" onAction="#appointmentMonthSelected" text="Current Month" toggleGroup="$appointment" />
+      <RadioButton fx:id="allRadioButton" layoutX="864.0" layoutY="51.0" mnemonicParsing="false" onAction="#appointmentAllSelected" selected="true" text="All Apointments" toggleGroup="$appointment" />
+      <Pane layoutX="764.0" layoutY="229.0" prefHeight="187.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="51.0" layoutY="118.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Logout " />
+            <Button layoutX="51.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Reports" />
+         </children>
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+      </Pane>
+   </children>
+</Pane>
